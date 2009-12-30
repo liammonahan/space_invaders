@@ -1,15 +1,13 @@
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 
-public class CoordinateSystem
-{
+public class CoordinateSystem {
   private Image picture;
   private AffineTransform coordTransform;
   int xCord, yCord;
 
    //  0 degrees points east
-  public CoordinateSystem(int x, int y, Image pic)
-  {
+  public CoordinateSystem(int x, int y, Image pic) {
     picture = pic;
     coordTransform = new AffineTransform();
     
@@ -20,26 +18,21 @@ public class CoordinateSystem
     coordTransform.translate(x - w, y - h);
   }
 
-  public void shift(double dx, double dy)
-  {
+  public void shift(double dx, double dy) {
     coordTransform.translate(dx, dy);
     xCord += dx;
     yCord += dy;
   }
   
-  public int getX()
-  {
+  public int getX() {
     return xCord;
   }
   
-  public int getY()
-  {
+  public int getY() {
     return yCord;
   }
 
-  public void drawImage(Graphics g, Image picture)
-  {
+  public void drawImage(Graphics g, Image picture) {
     ((Graphics2D)g).drawImage(picture, coordTransform, null);
   }
 }
-

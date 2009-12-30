@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
 public class Ship {
-	private static Image pic = new ImageIcon("ship.png").getImage();;
+	private static Image pic = new ImageIcon("ship.png").getImage();
 	public CoordinateSystem coordinates;
 	static int ships_row = 6, ships_col = 6;
 	public static Ship[][] ships = new Ship[6][6];
@@ -38,8 +38,8 @@ public class Ship {
 	public static void shoot() {
 		int a = randomInt(0, ships_row - 1);
 		int b = randomInt(0, ships_col - 1);
-		Main.lasers.add(ships[a][b].coordinates.getX() + 20,
-				ships[a][b].coordinates.getY() + 20, false);
+		Main.lasers.add(ships[a][b].coordinates.getX() + 20, 
+		    ships[a][b].coordinates.getY() + 20, false);
 	}
 
 	public static int randomInt(int low, int high) {
